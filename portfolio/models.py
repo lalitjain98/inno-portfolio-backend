@@ -54,3 +54,17 @@ class Skill(models.Model):
 
     def __str__(self):
         return self.title
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True, default="anonymous")
+    email = models.EmailField(max_length=100, null=True, blank=True)
+    title = models.CharField(max_length=100, null=True, blank=True)
+    content = models.TextField(max_length=2048, null=True, blank=True)
+    
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date_created']
+
+    def __str__(self):
+        return self.name + ' ' + self.title

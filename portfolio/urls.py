@@ -6,7 +6,7 @@ from portfolio import views
 
 router = DefaultRouter()
 
-# router.register('users', views.CustomUserViewSet)
+router.register('feedbacks', views.FeedbackViewSet)
 
 
 # The API URLs are now determined automatically by the router.
